@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevTeam AI | Software Developer</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">D</div>
+            <div>
+                <h2>DevTeam AI</h2>
+                <p>AI Development Studio</p>
+            </div>
+        </div>
+
+        <div class="nav-heading">WORKSPACE</div>
+
+        <nav>
+            <a href="#dashboard" class="nav-link active">
+                <span>⌂</span> Dashboard
+            </a>
+
+            <a href="#request" class="nav-link">
+                <span>＋</span> New Project
+            </a>
+
+            <a href="#results" class="nav-link">
+                <span>▤</span> Development Results
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="status-dot"></div>
+            <span>AI System Ready</span>
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <p class="breadcrumb">Workspace / Dashboard</p>
+                <h2>Software Development Dashboard</h2>
+            </div>
+
+            <div class="top-status">
+                <span class="status-dot"></span>
+                All Systems Ready
+            </div>
+
+        </header>
+
+
+        <section id="dashboard" class="welcome">
+
+            <div>
+                <span class="eyebrow">MULTI-AGENT AI SYSTEM</span>
+
+                <h1>Your AI Software<br>Development Team</h1>
+
+                <p>
+                    Turn your software ideas into implementation plans,
+                    Python code, test cases and professional code reviews.
+                </p>
+
+                <a href="#request" class="primary-button">
+                    Start New Development →
+                </a>
+            </div>
+
+            <div class="welcome-graphic">
+                <div class="graphic-circle">AI</div>
+                <div class="graphic-label">4 Specialized Agents</div>
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">OUR WORKFLOW</span>
+                    <h2>Meet Your AI Agents</h2>
+                </div>
+            </div>
+
+            <div class="agent-grid">
+
+                <div class="agent-card">
+                    <div class="agent-icon blue">01</div>
+                    <h3>Requirement Analyst</h3>
+                    <p>Analyzes requirements and prepares an implementation plan.</p>
+                    <span class="agent-label">Planning</span>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-icon purple">02</div>
+                    <h3>Code Generator</h3>
+                    <p>Generates Python code based on the development plan.</p>
+                    <span class="agent-label">Development</span>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-icon orange">03</div>
+                    <h3>Testing Engineer</h3>
+                    <p>Creates pytest cases to check the generated code.</p>
+                    <span class="agent-label">Testing</span>
+                </div>
+
+                <div class="agent-card">
+                    <div class="agent-icon green">04</div>
+                    <h3>Code Reviewer</h3>
+                    <p>Reviews code and identifies potential issues.</p>
+                    <span class="agent-label">Quality Review</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="request" class="section request-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">START BUILDING</span>
+                    <h2>New Development Request</h2>
+                    <p>Describe the software you want your AI team to develop.</p>
+                </div>
+            </div>
+
+            <div class="request-card">
+
+                <label for="requirement">Software Requirement</label>
+
+                <textarea
+                    id="requirement"
+                    placeholder="Example: Create a Python student management system that allows users to add students, view student records, search students and delete records."
+                ></textarea>
+
+                <div class="request-footer">
+
+                    <span>Powered by Groq + LangGraph</span>
+
+                    <button id="generateBtn" onclick="startDevelopment()">
+                        Generate Software →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="results" class="section results-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">AI OUTPUT</span>
+                    <h2>Development Results</h2>
+                    <p>Results generated by your AI development team.</p>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+
+                <div class="loader"></div>
+
+                <h3>AI Agents are working...</h3>
+
+                <p id="loadingText">
+                    Requirement Analyst is analyzing your request.
+                </p>
+
+            </div>
+
+            <div id="errorBox" class="error-box hidden"></div>
+
+            <div id="resultsContent" class="results-content hidden">
+
+                <div class="result-card">
+
+                    <h3>01. Implementation Plan</h3>
+                    <pre id="planOutput"></pre>
+
+                </div>
+
+                <div class="result-card">
+
+                    <h3>02. Generated Python Code</h3>
+                    <pre id="codeOutput"></pre>
+
+                </div>
+
+                <div class="result-card">
+
+                    <h3>03. Generated Test Cases</h3>
+                    <pre id="testsOutput"></pre>
+
+                </div>
+
+                <div class="result-card">
+
+                    <h3>04. Code Review</h3>
+                    <pre id="reviewOutput"></pre>
+
+                </div>
+
+                <div class="result-card report-card">
+
+                    <h3>05. Final Development Report</h3>
+                    <pre id="reportOutput"></pre>
+
+                    <button onclick="downloadReport()">
+                        Download Development Report
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            DevTeam AI © 2026 | Multi-Agent Software Development System
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
